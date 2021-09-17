@@ -1,0 +1,56 @@
+{
+  "name": "nyan_finance",
+  "homepage": "https://nyan.finance",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "aos": "^2.3.4",
+    "apexcharts": "^3.26.1",
+    "node-sass": "4.14.1",
+    "react": "^17.0.2",
+    "react-apexcharts": "^1.3.9",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-timecode": "^1.2.0",
+    "react-timer-wrapper": "^0.4.1",
+    "web-vitals": "^1.0.1",
+    "web3": "^1.2.11",
+    "web3modal": "^1.9.0",
+    "gh-pages": "^3.1.0",
+    "reactn": "^2.2.7",
+    "react-router": "^5.2.0",
+    "@openzeppelin/contracts": "^3.4.0",
+    "@truffle/hdwallet-provider": "^1.2.2",
+    "@walletconnect/client": "^1.2.2",
+    "@walletconnect/qrcode-modal": "^1.2.2",
+    "@walletconnect/web3-provider": "^1.3.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

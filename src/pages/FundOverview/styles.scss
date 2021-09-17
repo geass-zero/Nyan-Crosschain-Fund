@@ -1,0 +1,57 @@
+@import './../../variables.scss';
+
+.fund_overview {
+    article {
+        padding: 20px 0;
+
+        .bnb {
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .legend_wrap {
+            font-size: 16px;
+            line-height: 26px;
+            color: var(--blue-text);
+            @include flex-row();
+            color: var(--dark-text);
+            transition: color 0.4s;
+
+            .item {
+                margin-left: 20px;
+                @include flex-row();
+
+                &.passive {
+                    .color_box {
+                        background-color: #5a84fc;
+                    }
+                }
+                .color_box {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 4px;
+                    background-color: #8d53d9;
+                    margin-right: 8px;
+                }
+            }
+        }
+
+        p {
+            margin: 0;
+            margin-top: 5px;
+            font-size: 12px !important;
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .fund_overview {
+        .row_box {
+            .row {
+                .hex {
+                    width: 33%;
+                }
+            }
+        }
+    }
+}

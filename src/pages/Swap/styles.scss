@@ -1,0 +1,169 @@
+@import './../../variables.scss';
+
+.swap {
+    p {
+        color: var(--lite-text) !important;
+    }
+
+    .my_bnb_wrap {
+        &.is_loading {
+            .form_wrap {
+                pointer-events: none;
+                // filter: blur(0.5px);
+            }
+        }
+
+        .form_wrap {
+            @include flex-row();
+            width: 100%;
+            margin-top: 20px;
+            justify-content: space-between;
+            transition: filter 0.4s;
+
+            .form_item_wrap {
+                width: calc(33.33% - 20px);
+
+                label {
+                    @include flex-row();
+                    justify-content: space-between;
+
+                    .logo_wrap {
+                        float: right;
+                        @include flex-row();
+                        justify-content: flex-end;
+                        font-size: 14px;
+
+                        img {
+                            width: 25px;
+                            height: 25px;
+                            object-fit: contain;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .pool_investments {
+        margin-top: 15px;
+        float: left;
+        width: 100%;
+    }
+
+    .investments_wrap_table {
+        width: 100%;
+        text-align: center;
+
+        .headers_wrap {
+            @include flex-row();
+            justify-content: space-around;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: bold;
+
+            .head_item {
+                flex: 1;
+            }
+        }
+
+        .body_wrap {
+            @include flex-column();
+            width: 100%;
+
+            .investment_item {
+                padding: 4px 0;
+                width: 100%;
+                @include flex-row();
+                justify-content: space-around;
+                border-bottom: 1px solid var(--border-color);
+
+                .data_item {
+                    flex: 1;
+                }
+
+                &:last-child {
+                    border-bottom: 0px;
+                }
+            }
+        }
+
+        .input_cell {
+            @include flex-row();
+            min-width: 300px;
+            padding-right: 5px;
+
+            input {
+                width: 100%;
+                min-width: auto;
+                margin-right: 5px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .swap {
+        .my_bnb_wrap {
+            .form_wrap {
+                flex-direction: column;
+                margin-bottom: 10px;
+
+                .form_item_wrap {
+                    width: 100%;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        .pool_investments {
+            @include flex-row();
+            justify-content: space-between;
+
+            input {
+                width: 50%;
+            }
+        }
+
+        .investments_paper_box {
+            background-color: transparent !important;
+        }
+
+        .investments_wrap_table {
+            .headers_wrap {
+                display: none;
+            }
+
+            .body_wrap {
+                .investment_item {
+                    padding: 15px;
+                    background-color: var(--base-white);
+                    flex-direction: column;
+                    border-radius: 8px;
+                    margin-bottom: 15px;
+
+                    .data_item {
+                        width: 100%;
+                        @include flex-row();
+                        justify-content: space-between;
+                        margin-bottom: 10px;
+
+                        .label {
+                            font-weight: bold;
+                        }
+
+                        button {
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .input_cell {
+            padding: 0 !important;
+            margin-top: 5px;
+            margin-bottom: 0 !important;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+@import './../../variables.scss';
+
+.active_pool {
+    position: relative;
+
+    h1 {
+        margin-bottom: 20px !important;
+    }
+
+    .abs_right {
+        @include flex-row();
+
+        select {
+            margin-left: 15px;
+        }
+    }
+}

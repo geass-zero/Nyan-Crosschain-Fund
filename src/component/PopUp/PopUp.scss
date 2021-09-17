@@ -1,0 +1,79 @@
+@import './../../variables.scss';
+
+.pop-up-wrap {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    min-width: 350px;
+    z-index: 9999;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transition: opacity 0.3s;
+    opacity: 0;
+    @include flex-row();
+    pointer-events: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0.753);
+    width: 100vw;
+
+    &.active {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    .pop-up-box {
+        width: 466px;
+        background: var(--input-bg-color);
+        height: 400px;
+        padding: 30px;
+        border-radius: 16px;
+        transition: transform 0.6s;
+        transform: scale(0);
+        box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.3);
+
+        &.responsive {
+            height: auto;
+        }
+
+        &.active {
+            transform: scale(1);
+        }
+
+        .header-wrap {
+            width: 100%;
+            padding-bottom: 15px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            padding: 15px;
+
+            .close-button {
+                cursor: pointer;
+                float: right;
+                font-size: 18px;
+            }
+        }
+
+        .header-data-wrap {
+            // padding-top: 25px;
+        }
+
+        .body-wrap {
+            display: flex;
+            height: calc(100% - 100px);
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .body-wrap-small {
+            display: flex;
+            height: calc(100% - 100px);
+            width: 100%;
+            margin-bottom: 20px;
+            flex-direction: column;
+        }
+    }
+}

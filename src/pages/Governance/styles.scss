@@ -1,0 +1,132 @@
+@import './../../variables.scss';
+
+.governance {
+    article {
+        margin-bottom: 25px !important;
+        width: 100%;
+        float: left;
+    }
+    .vote_info {
+        .head {
+            @include flex-row();
+            justify-content: flex-start;
+
+            svg {
+                margin-right: 5px;
+
+                path {
+                    fill: var(--purple);
+                }
+            }
+        }
+
+        p {
+            max-width: 50%;
+        }
+    }
+
+    .contracts_wrap {
+        width: 100%;
+
+        .contracts_head_wrap {
+            @include flex-row();
+            justify-content: space-around;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--dark-text);
+            font-weight: 600;
+
+            .head_item {
+                flex: 1;
+                text-align: center;
+
+                &.input_content {
+                    min-width: 20%;
+                    text-align: left;
+                }
+            }
+        }
+
+        .contacts_body_wrap {
+            width: 100%;
+        }
+    }
+
+    .contract_item {
+        @include flex-row();
+        justify-content: space-around;
+        padding: 4px 0;
+        border-bottom: 1px solid var(--border-color);
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        .contract_data_item {
+            flex: 1;
+            text-align: center;
+            @include flex-row();
+
+            svg {
+                margin-right: 15px;
+            }
+
+            &.input_content {
+                min-width: 20%;
+
+                input {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .governance {
+        .main_head {
+            @include flex-row();
+            justify-content: space-between;
+            width: 100%;
+            margin-bottom: 5px;
+        }
+
+        .vote_info {
+            .head {
+            }
+            p {
+                max-width: 100%;
+            }
+        }
+
+        .contracts_wrap {
+            .contracts_head_wrap {
+                display: none;
+            }
+        }
+
+        .contract_item {
+            flex-wrap: wrap;
+            padding: 15px;
+            margin-bottom: 10px;
+            @include plain_box();
+
+            .contract_data_item {
+                min-width: 100%;
+                @include flex-row();
+                justify-content: space-between;
+                margin-bottom: 10px;
+
+                &.input_content {
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    text-align: left;
+                    .label {
+                        width: 100%;
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

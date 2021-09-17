@@ -1,0 +1,46 @@
+@import './../../variables.scss';
+
+.available_graph_wrap {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+
+    .top_holds_head {
+        font-size: 14px;
+        line-height: 26px;
+        color: var(--dark-text);
+    }
+
+    .title {
+        @include flex-row();
+        justify-content: flex-start;
+        color: var(--dark-text);
+        font-size: 20px;
+        line-height: 28px;
+
+        .prof_pic {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: var(--dark-text-x1);
+            margin-right: 10px;
+        }
+    }
+
+    .owner {
+        font-size: 16px;
+        line-height: 26px;
+        width: 100%;
+        color: var(--dark-text-x1);
+        padding-left: 43px;
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    html {
+        body {
+            .available_graph_wrap {
+                padding: 0 !important;
+            }
+        }
+    }
+}

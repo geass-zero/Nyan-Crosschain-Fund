@@ -1,0 +1,25 @@
+/** All interations with the contracts */
+import Web3 from "web3";
+import { getGlobal, setGlobal } from 'reactn';
+import { Web3Util } from './index';
+
+const getCurrentAccount = async() => {
+    let accounts = getGlobal().accounts;
+    if(!accounts || !accounts[0] || accounts == undefined) {
+        let web3 = await Web3Util.createInstance();
+        accounts = await web3.eth.getAccounts();
+        setGlobal({accounts: accounts[0]});
+        return accounts[0];
+    }
+
+    if (accounts.constructor === Array) {
+        return accounts[0];
+    } else {
+        return accounts;
+    }
+}
+
+// Export each function
+export {
+    getCurrentAccount
+ };
