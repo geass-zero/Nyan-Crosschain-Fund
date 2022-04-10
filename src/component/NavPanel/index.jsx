@@ -28,9 +28,18 @@ const Test = () => {
             .setAttribute('dark', !e.currentTarget.checked);
     };
 
+    async function connectWallet() {
+        setMyAccount(await Accounts.getCurrentAccount());
+        console.log(myAccount);
+    }
+
+    async function disconnectWallet() {
+
+    }
+
     useEffect(() => {
         async function loadData() {
-          setMyAccount(await Accounts.getCurrentAccount());
+        //   setMyAccount(await Accounts.getCurrentAccount());
         }     
     
         
@@ -68,14 +77,21 @@ const Test = () => {
 
             <div className={'header_items' + (mobExpanded ? ' expanded' : '')}>
                 <div className='connection only_onExpanded'>
-                    <input
-                        type='text'
-                        name='connectId'
-                        id='connectId'
-                        disabled
-                        defaultValue={'...'+myAccount.substring(myAccount.length - 12)}
-                    />
-                    <button>Disconnect</button>
+                    {myAccount !== '' ?
+                        <div>
+                            <input
+                                type='text'
+                                name='connectId'
+                                id='connectId'
+                                disabled
+                                defaultValue={'...'+myAccount.substring(myAccount.length - 12)}
+                            />
+                            {/* <button onClick={() => disconnectWallet()}>Disconnect Wallet</button> */}
+                        </div>
+                        :
+                        <button onClick={() => connectWallet()}>Connect Wallet</button>
+                    }
+                    
                 </div>
                 <div
                     className='nav_links_set_wrap'
@@ -83,12 +99,12 @@ const Test = () => {
                     data-aos-offset='0 '
                     data-aos-duration='700'>
                     <div className='head only_onExpanded'>DASHBOARDS</div>
-                    <NavLink
+                    {/* <NavLink
                         onClick={() => setMobExpanded(false)}
                         link='/fund-overview'
                         name='Fund Overview'
                         Icon={OverViewIcon}
-                    />
+                    /> */}
                     <NavLink
                         onClick={() => setMobExpanded(false)}
                         link='/create-a-pool'

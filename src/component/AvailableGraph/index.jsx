@@ -220,9 +220,9 @@ const AvailableGraph = ({ type, name, owner, aum, lifetime }) => {
                     </>
                 )}
                 <div className='top_holds'>
-                    <div className='item'>LINK</div>
-                    <div className='item'>WBTC</div>
-                    <div className='item'>AAVE</div>
+                    <div className='item'>***</div>
+                    <div className='item'>***</div>
+                    <div className='item'>***</div>
                 </div>
             </div>
             <Link

@@ -8,6 +8,7 @@ import Governance from './pages/Governance';
 import IndexFunds from './pages/IndexFunds';
 import Swap from './pages/Swap';
 import PoolIndexInfo from './pages/PoolIndexInfo';
+import PoolActiveInfo from './pages/PoolActiveInfo';
 import NyanOTCSwap from './pages/NyanOTCSwap';
 import NavPanel from './component/NavPanel';
 
@@ -78,7 +79,7 @@ function App() {
                         <Swap />
                     </Route>
                     <Route path='/active-pool-info'>
-                        <PoolIndexInfo type='active' />
+                        <PoolActiveInfo type='active' />
                     </Route>
                     <Route path='/index-fund-info'>
                         <PoolIndexInfo type='passive' />

@@ -61,33 +61,52 @@ const getWeb3 = async() =>
  });
 
 const createInstance = async() => {
-  if (window.localStorage.getItem('chain') == 'ETH') {
-    const providerOptions = createProviderOptions()
-    const web3Modal = createModal(providerOptions);
-    // check if current instance is present
-    let provider = false;
-      try {
-        provider = await web3Modal.connect();
-      } catch (exception){
-        console.log('exception thrown while instantiating web3modal');
-        console.log(exception)
-        return false
-      }
-
-      const web3 = new Web3(provider);
-      const accounts = await web3.eth.getAccounts().catch((e) => { console.log(e); });
-      setGlobals(web3, accounts, web3Modal);
-      // setApprovals();
-      return web3;
-  } else {
-    return await getWeb3();
-    // await getWeb3().then((res) => {
-    //   console.log(res);
-    //   return res;
-    // }).catch((err) => {
-    //   console.log(err);
-    // })
+  const providerOptions = createProviderOptions()
+  const web3Modal = createModal(providerOptions);
+  // check if current instance is present
+  let provider = false;
+  try {
+    provider = await web3Modal.connect();
+  } catch (exception){
+    console.log('exception thrown while instantiating web3modal');
+    console.log(exception)
+    return false
   }
+
+    const web3 = new Web3(provider);
+    const accounts = await web3.eth.getAccounts().catch((e) => { console.log(e); });
+    setGlobals(web3, accounts, web3Modal);
+    // setApprovals();
+    return web3;
+
+    
+  // if (window.localStorage.getItem('chain') == 'ETH') {
+  //   const providerOptions = createProviderOptions()
+  //   const web3Modal = createModal(providerOptions);
+  //   // check if current instance is present
+  //   let provider = false;
+  //     try {
+  //       provider = await web3Modal.connect();
+  //     } catch (exception){
+  //       console.log('exception thrown while instantiating web3modal');
+  //       console.log(exception)
+  //       return false
+  //     }
+
+  //     const web3 = new Web3(provider);
+  //     const accounts = await web3.eth.getAccounts().catch((e) => { console.log(e); });
+  //     setGlobals(web3, accounts, web3Modal);
+  //     // setApprovals();
+  //     return web3;
+  // } else {
+  //   return await getWeb3();
+  //   // await getWeb3().then((res) => {
+  //   //   console.log(res);
+  //   //   return res;
+  //   // }).catch((err) => {
+  //   //   console.log(err);
+  //   // })
+  // }
 }
 
 const createProviderOptions = () => {
@@ -115,6 +134,7 @@ const createModal = (providerOptions) => {
       hover: "rgb(252,163,220)"
     }
   });
+  console.log(web3Modal);
   return web3Modal;
 }
 

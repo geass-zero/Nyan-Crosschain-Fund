@@ -1,0 +1,181 @@
+@import './../../variables.scss';
+
+.pool_index_wap {
+    .button_wrap {
+        button {
+            margin-left: 15px;
+        }
+    }
+
+    .profile_card {
+        @include flex-row();
+        .prof_image {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--dark-text-x1);
+            float: left;
+        }
+
+        .details {
+            float: left;
+            @include flex-column();
+            align-items: flex-start;
+            padding-left: 10px;
+
+            .name {
+                font-size: 18px;
+                line-height: 18px;
+                color: var(--dark-text);
+            }
+
+            .creator {
+                font-size: 16px;
+                color: var(--dark-text-x1);
+                line-height: 26px;
+            }
+        }
+    }
+
+    .pool_warning_box {
+        p {
+            margin: 0;
+            @include flex-row();
+            justify-content: flex-start;
+
+            svg {
+                margin-right: 10px;
+                path {
+                    fill: var(--purple);
+                }
+            }
+        }
+    }
+
+    .available_credits {
+        margin-bottom: 0px !important;
+        margin-top: 10px !important;
+    }
+
+    .index_tokens_wrap {
+        // margin-top: 20px;
+        float: left;
+        width: 100%;
+    }
+}
+
+.pool_pop_up {
+    width: 100% !important;
+    max-width: 500px;
+    overflow: auto;
+    height: auto !important;
+    max-height: 65vh !important;
+
+    hr {
+        border-top: 1px solid var(--border-color);
+    }
+
+    .form_wrap {
+        margin-top: 5px;
+        float: left;
+
+        input {
+            // max-width: 200px;
+        }
+    }
+
+    p {
+        float: left;
+        width: 100%;
+    }
+
+    button {
+        margin-top: 20px;
+    }
+
+    .section_brake {
+        margin: 0;
+        margin-top: 20px;
+    }
+}
+
+.edit_pop_up {
+    width: 550px !important;
+
+    .form_wrap {
+        margin-top: 0;
+    }
+
+    .edit_header {
+        font-size: 16px;
+        color: var(--lite-text);
+        @include flex-row();
+        justify-content: flex-start;
+        margin-bottom: 15px;
+
+        .image {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background-color: var(--lite-text);
+            margin-right: 10px;
+        }
+
+        svg {
+            margin-right: 10px;
+        }
+    }
+}
+
+@media only screen and (max-width: $breakpoint-sm) {
+    .pool_index_wap {
+        .profile_card {
+            width: 100%;
+            justify-content: flex-start;
+        }
+        .button_wrap {
+            width: 100%;
+            margin-top: 15px;
+            button {
+                flex: 1;
+                justify-content: space-between;
+                margin: 0 5px !important;
+                margin-bottom: 10px !important;
+                width: calc(50% - 10px);
+            }
+        }
+
+        .head {
+            margin-bottom: 5px !important;
+        }
+
+        .row_box {
+            &.passive_wrap {
+                .row {
+                    .hex {
+                        width: 38%;
+                    }
+                }
+            }
+
+            &.active_wrap {
+                
+                .row {
+                    
+                    .hex {
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.split_box_wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+}

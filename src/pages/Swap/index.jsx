@@ -23,7 +23,7 @@ const getCoin = () => {
 
 
 let myInvestments = null;
-const Swap = () => {
+const Swap = ({isInPool}) => {
 
     const liquidateHandler = (value) => {
         console.log(value);
@@ -46,14 +46,16 @@ const Swap = () => {
 
     function arrangeInvestments() {
         let arr = [];
-        for (let i = 0; i < myInvestments[0].length; i++) {
-            if (myInvestments[1][i] != 0) {
-                arr.push(
-                    <RowComponent
-                        index={i}
-                        liquidateHandler={liquidateHandler}
-                    />
-                )
+        if (myInvestments) {
+            for (let i = 0; i < myInvestments[0].length; i++) {
+                if (myInvestments[1][i] != 0) {
+                    arr.push(
+                        <RowComponent
+                            index={i}
+                            liquidateHandler={liquidateHandler}
+                        />
+                    )
+                }
             }
         }
         return arr;
@@ -63,7 +65,9 @@ const Swap = () => {
     return (
         <section className='nav_adjust content_wrap swap'>
             <div data-aos='fade-up' data-aos-offset='0' data-aos-duration='500'>
-                <SwapForm />
+                {isInPool ? 
+                    null : <SwapForm />
+                }
                 <p className='pool_investments'>
                     Pool Investments:{' '}
                     {/* <input

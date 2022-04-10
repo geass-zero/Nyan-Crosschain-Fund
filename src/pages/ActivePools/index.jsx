@@ -25,6 +25,7 @@ const ActivePools = () => {
 
     const setActiveDivs = () => {
         let arr = [];
+        console.log(activePools);
         if (activePools[0]) {
             for (let i = 0; i < activePools[0].length; i++) {
                 arr.push(
